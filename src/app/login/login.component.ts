@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('userrole', data.userrole.toString());
         sessionStorage.setItem('usergroup', data.usergroup.toString());
 
-        this.router.navigateByUrl("/dashboard");
+        this.router.navigateByUrl("/home");
       }
       else { alert("Incorrect Username");}
 

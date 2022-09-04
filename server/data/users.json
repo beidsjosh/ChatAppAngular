@@ -3,12 +3,22 @@
     "username":"superuser",
     "useremail":"superuser@email.com",
     "userrole":"super",
-    "usergroup":"default-group"
+    "usergroup":"default-group",
+    "ok":false
 }, 
 {
     "userid":2,
     "username":"groupadminuser",
     "useremail":"groupadminuser@email.com",
     "userrole":"group-admin",
-    "usergroup":"default-group"
+    "usergroup":"default-group",
+    "ok":false
+}, 
+{
+    "userid":3,
+    "username":"defaultuser",
+    "useremail":"defaultuser@email.com",
+    "userrole":"default",
+    "usergroup":"default-group",
+    "ok":false
 }]
