@@ -4,4 +4,5 @@ export interface Userobj {
     useremail: string;
     userrole: string;
     usergroup: string;
+    userok: string;
 }

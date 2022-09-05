@@ -1,0 +1,15 @@
+#username, #email, #id{
+    padding: 5px;
+}
+
+#emaillabel{
+    padding-right: 58px;
+}
+
+#namelabel{
+    padding-right: 23.5px;
+}
+
+#idlabel{
+    padding-right: 15px;
+}
