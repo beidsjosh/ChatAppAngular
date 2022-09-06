@@ -4,6 +4,7 @@ import { CreateuserComponent } from './createuser/createuser.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NewchannelComponent } from './newchannel/newchannel.component';
 import { NewgroupComponent } from './newgroup/newgroup.component';
 import { UserlistComponent } from './userlist/userlist.component';
 
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'createuser', component: CreateuserComponent},
   { path: 'newgroup', component: NewgroupComponent},
-  { path: 'userlist', component: UserlistComponent}
+  { path: 'userlist', component: UserlistComponent},
+  { path: 'newchannel', component: NewchannelComponent}
 ];
 
 @NgModule({

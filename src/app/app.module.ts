@@ -13,6 +13,7 @@ import { ChannellistComponent } from './channellist/channellist.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { HomeComponent } from './home/home.component';
 import { NewgroupComponent } from './newgroup/newgroup.component';
+import { NewchannelComponent } from './newchannel/newchannel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NewgroupComponent } from './newgroup/newgroup.component';
     ChannellistComponent,
     CreateuserComponent,
     HomeComponent,
-    NewgroupComponent
+    NewgroupComponent,
+    NewchannelComponent
   ],
   imports: [
     BrowserModule,
