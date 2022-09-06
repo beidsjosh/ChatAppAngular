@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
-import { GroupchannelsComponent } from './groupchannels/groupchannels.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { ChannellistComponent } from './channellist/channellist.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { HomeComponent } from './home/home.component';
+import { NewgroupComponent } from './newgroup/newgroup.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +20,11 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     DashboardComponent,
     UserdetailsComponent,
-    GroupchannelsComponent,
     UserlistComponent,
     ChannellistComponent,
     CreateuserComponent,
-    HomeComponent
+    HomeComponent,
+    NewgroupComponent
   ],
   imports: [
     BrowserModule,

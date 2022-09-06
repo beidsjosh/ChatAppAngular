@@ -1,0 +1,15 @@
+[{
+    "channelid":1,
+    "channelname": "defaultChannel",
+    "groupsinchannel": "default-group"
+},
+{
+    "channelid":2,
+    "channelname": "defaultChannel2",
+    "groupsinchannel": "default-group"
+},
+{
+    "channelid":3,
+    "channelname": "defaultChannel",
+    "groupsinchannel": "super-group"
+}]

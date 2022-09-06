@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GroupchannelsComponent } from './groupchannels.component';
+import { NewgroupComponent } from './newgroup.component';
 
-describe('GroupchannelsComponent', () => {
-  let component: GroupchannelsComponent;
-  let fixture: ComponentFixture<GroupchannelsComponent>;
+describe('NewgroupComponent', () => {
+  let component: NewgroupComponent;
+  let fixture: ComponentFixture<NewgroupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GroupchannelsComponent ]
+      declarations: [ NewgroupComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GroupchannelsComponent);
+    fixture = TestBed.createComponent(NewgroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

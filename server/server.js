@@ -22,3 +22,4 @@ server.listen(http,PORT);
 
 app.post('/login', require('./router/postLogin'));
 app.post('/postNewUser', require('./router/postNewUser'));
+app.post('/postNewGroup', require('./router/postNewGroup'));
