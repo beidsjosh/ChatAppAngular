@@ -8,7 +8,7 @@ module.exports = function(req, res) {
         if (err) throw err;
         let UserArray = JSON.parse(data);
 
-        console.log(UserArray);
+        //console.log(UserArray);
         res.send(UserArray);
     })
 }

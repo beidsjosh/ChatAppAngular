@@ -1,1 +1,5 @@
-<p>userlist works!</p>
+<div *ngFor="let users of userlist">
+    <div class="row" #row>
+        <ul>{{users}}</ul>
+    </div>
+</div>
