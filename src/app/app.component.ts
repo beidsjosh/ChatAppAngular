@@ -10,6 +10,12 @@ export class AppComponent {
 
   UserLoggedin = sessionStorage.getItem('userlogin')
   isUserLoggedin = false;
+
+  loggedinUsername = sessionStorage.getItem('username');
+  loggedinUserrole = sessionStorage.getItem('userrole');
+  supertrue = false;
+  admintrue = false;
+  defaulttrue = false;
   
 
   constructor(private router: Router) { 
@@ -17,6 +23,15 @@ export class AppComponent {
       this.isUserLoggedin = true;
     } else if(sessionStorage.getItem('userlogin') == "false"){
       this.isUserLoggedin = false;
+    }
+
+    if ((sessionStorage.getItem('userrole')=="super")){
+      this.supertrue = true;
+      console.log(this.supertrue);
+    } else if ((sessionStorage.getItem('userrole')=="group-admin")){
+      this.admintrue = true;
+    } else if ((sessionStorage.getItem('userrole')=="default")){
+      this.defaulttrue = true;
     }
   }
   title = 'assign';

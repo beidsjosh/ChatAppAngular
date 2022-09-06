@@ -26,3 +26,4 @@ app.post('/postNewGroup', require('./router/postNewGroup'));
 app.post('/postNewChannel', require('./router/postNewChannel'));
 app.post('/getUsers', require('./router/postAllUsers'));
 app.post('/getGroups', require('./router/getGroups'));
+app.post('/getUserChannels', require('./router/getUserChannels'));

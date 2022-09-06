@@ -1,8 +1,21 @@
 <h2>Dashboard</h2>
-<!--change to link to form page later-->
-<a routerLink="/createuser" routerLinkActive="active">Create New User</a><br> 
-<a routerLink="/newgroup" routerLinkActive="active">Create New Group</a><br>
-<a routerLink="/newchannel" routerLinkActive="active">Create New Channel</a><br>
-<a routerLink="/userlist" routerLinkActive="active">User List</a><br>  
+<div *ngIf="supertrue">
+    <a routerLink="/createuser" routerLinkActive="active">Create New User</a><br> 
+    <a routerLink="/newgroup" routerLinkActive="active">Create New Group</a><br>
+    <a routerLink="/newchannel" routerLinkActive="active">Create New Channel</a><br>
+    <a routerLink="/userlist" routerLinkActive="active">User List</a><br> 
+</div>
+
+<div *ngIf="admintrue">
+    <a routerLink="/createuser" routerLinkActive="active">Create New User</a><br> 
+    <a routerLink="/newgroup" routerLinkActive="active">Create New Group</a><br>
+    <a routerLink="/newchannel" routerLinkActive="active">Create New Channel</a><br>
+    <a routerLink="/userlist" routerLinkActive="active">User List</a><br>
+</div>
+
+<div *ngIf="defaulttrue">
+    <p>Access Denied, you must be at least an Admin to access the Dashboard</p>
+</div>
+ 
 
 

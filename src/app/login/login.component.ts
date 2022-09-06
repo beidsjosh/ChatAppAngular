@@ -25,12 +25,10 @@ export class LoginComponent implements OnInit {
     this.httpClient.post(BACKEND_URL + '/login', user,  httpOptions)
     // this.httpClient.post(BACKEND_URL + '/login', user)
     .subscribe((data:any)=>{
-      alert("posting: " +JSON.stringify(user));
 
-      alert("postRes: " +JSON.stringify(data));
 
       if (data.ok){
-        alert("correct");
+
         sessionStorage.setItem('userid', data.userid.toString());
         sessionStorage.setItem('userlogin', data.ok.toString());
         sessionStorage.setItem('username', data.username);

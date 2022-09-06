@@ -25,6 +25,12 @@ export class CreateuserComponent implements OnInit {
   grouplist: string[] = [];
   //userok='false';
 
+  loggedinUsername = sessionStorage.getItem('username');
+  loggedinUserrole = sessionStorage.getItem('userrole');
+  supertrue = false;
+  admintrue = false;
+  defaulttrue = false;
+
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
@@ -36,7 +42,16 @@ export class CreateuserComponent implements OnInit {
       }
       
       console.log(this.grouplist);
-    })
+    });
+
+    if ((sessionStorage.getItem('userrole')=="super")){
+      this.supertrue = true;
+      console.log(this.supertrue);
+    } else if ((sessionStorage.getItem('userrole')=="group-admin")){
+      this.admintrue = true;
+    } else if ((sessionStorage.getItem('userrole')=="default")){
+      this.defaulttrue = true;
+    }
   }
 
   submitNewUser(){

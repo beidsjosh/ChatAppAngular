@@ -23,7 +23,7 @@
 
       <label for="role" id="rolelabel"><b>User Role: </b></label>
       <select id="userrole" [(ngModel)] = "userrole" [ngModelOptions]="{standalone: true}">
-        <option value="super">Super</option>
+        <option value="super" *ngIf="supertrue">Super</option>
         <option value="group-admin">Group Admin</option>
         <option value="default">Default User</option>
       </select>
