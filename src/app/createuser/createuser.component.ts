@@ -22,11 +22,21 @@ export class CreateuserComponent implements OnInit {
   userid='';
   usergroup='';
   userrole='';
+  grouplist: string[] = [];
   //userok='false';
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    this.httpClient.post(BACKEND_URL + '/getGroups',  httpOptions)
+    .subscribe((data:any)=>{
+      console.log(data);
+      for (let i = 0; i < data.length; i++) {
+        this.grouplist.push(data[i].groupname);
+      }
+      
+      console.log(this.grouplist);
+    })
   }
 
   submitNewUser(){

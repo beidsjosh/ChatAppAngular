@@ -5,8 +5,8 @@ module.exports = function(req, res) {
         "userid": req.body.userid,
         "username": req.body.username,
         "useremail": req.body.useremail,
-        "userrole": "default",
-        "usergroup": "default-group",
+        "userrole": req.body.userrole,
+        "usergroup": req.body.usergroup,
         "ok": false
     }
     let uArray = [];
