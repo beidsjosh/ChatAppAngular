@@ -1,6 +1,6 @@
 <form action="action_page.php">
     <div class="container">
-      <h1>Create Group</h1>
+      <h1>Create Channel</h1>
       <hr>
   
       <label for="name" id="namelabel"><b>Channel Name: </b></label>
@@ -15,7 +15,8 @@
       <select id="channelgroup" [(ngModel)] = "groupsinchannel" [ngModelOptions]="{standalone: true}">
         <option *ngFor="let groups of grouplist" value = {{groups}}>{{groups}}</option>
       </select>
+      <hr>
 
-      <button type="submit" class="registerbtn" (click)="submitNewChannel()">Create Group</button>
+      <button type="submit" class="registerbtn" (click)="submitNewChannel()">Create Channel</button>
     </div>
 </form>

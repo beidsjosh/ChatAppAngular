@@ -13,6 +13,9 @@ export class DashboardComponent implements OnInit {
   admintrue = false;
   defaulttrue = false;
 
+  UserLoggedin = sessionStorage.getItem('userlogin')
+  isUserLoggedin = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +26,12 @@ export class DashboardComponent implements OnInit {
       this.admintrue = true;
     } else if ((sessionStorage.getItem('userrole')=="default")){
       this.defaulttrue = true;
+    }
+
+    if(sessionStorage.getItem('userlogin') == "true"){
+      this.isUserLoggedin = true;
+    } else if(sessionStorage.getItem('userlogin') == "false"){
+      this.isUserLoggedin = false;
     }
   }
 

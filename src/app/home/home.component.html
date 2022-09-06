@@ -1,11 +1,19 @@
-<div *ngIf="supertrue">Content to render when condition is true.</div>
+<div *ngIf="isUserLoggedin">
+    <h1>
+        Welcome, {{loggedinUsername}}
+    </h1>
+    <h5>
+        Your Channel List
+    </h5>
+    <div *ngFor="let channels of UserGroupList">
+        <div class="row" #row>
+            <a routerLink="/home" routerLinkActive="active">{{channels}}</a><br> 
+        </div>
+    </div>
+</div>
 
 <div *ngIf="!isUserLoggedin">
     <p>Please Login before accessing the website</p>
 </div>
 
-<div *ngFor="let channels of UserGroupList">
-    <div class="row" #row>
-        <ul>{{channels}}</ul>
-    </div>
-</div>
+

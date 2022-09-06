@@ -1,6 +1,3 @@
 [{"userid":1,"username":"superuser","useremail":"superuser@email.com","userrole":"super","usergroup":"super-group","ok":false},
-{"userid":2,"username":"groupadminuser","useremail":"groupadminuser@email.com","userrole":"group-admin","usergroup":"default-group","ok":false},
-{"userid":3,"username":"defaultuser","useremail":"defaultuser@email.com","userrole":"default","usergroup":"default-group","ok":false},
-{"userid":"4","username":"testNewUser","useremail":"testnewuser@email.com","userrole":"default","usergroup":"default-group","ok":false},
-{"userid":"5","username":"test2","useremail":"test2@email.com","userrole":"default","usergroup":"default-group","ok":false},
-{"userid":"100","username":"testuser420","useremail":"testuser@email.com","userrole":"group-admin","usergroup":"test-group","ok":false}]
+{"userid":2,"username":"groupadminuser","useremail":"groupadminuser@email.com","userrole":"group-admin","usergroup":"groupadmin-group","ok":false},
+{"userid":3,"username":"defaultuser","useremail":"defaultuser@email.com","userrole":"default","usergroup":"default-group","ok":false}]

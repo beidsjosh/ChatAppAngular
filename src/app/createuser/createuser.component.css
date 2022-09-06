@@ -1,4 +1,4 @@
-#username, #email, #id{
+#username, #email, #id, #usergroup, #userrole{
     padding: 5px;
 }
 
@@ -12,4 +12,15 @@
 
 #idlabel{
     padding-right: 15px;
+}
+
+#grouplabel{
+    padding-right: 13.5px;
+    padding-bottom: 5px;
+}
+
+#rolelabel{
+    padding-right: 27.5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }

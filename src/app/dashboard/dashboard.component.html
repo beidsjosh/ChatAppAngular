@@ -16,6 +16,10 @@
 <div *ngIf="defaulttrue">
     <p>Access Denied, you must be at least an Admin to access the Dashboard</p>
 </div>
+
+<div *ngIf="!isUserLoggedin">
+    <p>Please Login before accessing the website</p>
+</div>
  
 
 
