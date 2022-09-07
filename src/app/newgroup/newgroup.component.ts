@@ -33,9 +33,9 @@ export class NewgroupComponent implements OnInit {
     }
 
     this.httpClient.post<Groupobj[]>(BACKEND_URL + '/postNewGroup', groupobj,  httpOptions)
-      .subscribe((m: any) => {alert(JSON.stringify(m));});
+      .subscribe((m: any) => {alert("New Group created! Returning to dashboard");});
 
-    alert("New Group created! Returning to dashboard");
+    //alert("New Group created! Returning to dashboard");
     this.router.navigateByUrl("/dashboard");
   }
 }

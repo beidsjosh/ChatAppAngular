@@ -43,9 +43,9 @@ export class NewchannelComponent implements OnInit {
     }
 
     this.httpClient.post<Channelobj[]>(BACKEND_URL + '/postNewChannel', channelobj,  httpOptions)
-      .subscribe((m: any) => {alert(JSON.stringify(m));});
+      .subscribe((m: any) => {alert("New Channel created! Returning to dashboard");});
 
-    alert("New Channel created! Returning to dashboard");
+    //alert("New Channel created! Returning to dashboard");
     this.router.navigateByUrl("/dashboard");
   }
 

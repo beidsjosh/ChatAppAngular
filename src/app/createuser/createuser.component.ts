@@ -65,9 +65,9 @@ export class CreateuserComponent implements OnInit {
     }
 
     this.httpClient.post<Userobj[]>(BACKEND_URL + '/postNewUser', userobj,  httpOptions)
-      .subscribe((m: any) => {alert(JSON.stringify(m));});
+      .subscribe((m: any) => {alert("New User created! Returning to dashboard");});
 
-    alert("New User created! Returning to dashboard");
+    //alert("New User created! Returning to dashboard");
     this.router.navigateByUrl("/dashboard");
   }
 

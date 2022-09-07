@@ -1,6 +1,1 @@
-[{"channelid":1,"channelname":"defaultChannel","groupsinchannel":"default-group"},
-{"channelid":2,"channelname":"defaultChannel2","groupsinchannel":"default-group"},
-{"channelid":3,"channelname":"superChannel1","groupsinchannel":"super-group"},
-{"channelid":"100","channelname":"super-channel","groupsinchannel":"super-group"},
-{"channelid":"1000","channelname":"groupadmin-channel1","groupsinchannel":"groupadmin-group"},
-{"channelid":"1001","channelname":"groupadmin-channel2","groupsinchannel":"groupadmin-group"}]
+[{"channelid":1,"channelname":"defaultChannel","groupsinchannel":"default-group"},{"channelid":2,"channelname":"defaultChannel2","groupsinchannel":"default-group"},{"channelid":3,"channelname":"superChannel1","groupsinchannel":"super-group"},{"channelid":"100","channelname":"super-channel","groupsinchannel":"super-group"},{"channelid":"1000","channelname":"groupadmin-channel1","groupsinchannel":"groupadmin-group"},{"channelid":"1001","channelname":"groupadmin-channel2","groupsinchannel":"groupadmin-group"},{"channelid":"41","channelname":"testchannel1","groupsinchannel":"test-group"}]
