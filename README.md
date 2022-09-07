@@ -2,8 +2,11 @@
 The following repo is for the Assignment in 3813ICT. It includes an Angular app that has the foundations for a chat app (to be completed in Phase 2).
 
 Usernames: Use these usernames to log in and test the different permissions
+
 superuser: includes super privileges and the ability to create other super users
+
 groupadminuser: has groupadmin-role and lacks the ability to create other super users
+
 defaultuser: has no permissions, can only access the home page
 
 ## Git Repository
