@@ -31,6 +31,7 @@ MongoClient.connect(url, {/*poolSize:10,*/useNewUrlParser: true, useUnifiedTopol
 
         require('./router/postNewUser.js')(db,app);
         require('./router/postNewGroup.js')(db,app);
+        require('./router/postNewChannel.js')(db,app);
 
     //require('./listen.js')(http);
 })
@@ -38,7 +39,7 @@ MongoClient.connect(url, {/*poolSize:10,*/useNewUrlParser: true, useUnifiedTopol
 app.post('/login', require('./router/postLogin'));
 //app.post('/postNewUser', require('./router/postNewUser'));
 //app.post('/postNewGroup', require('./router/postNewGroup'));
-app.post('/postNewChannel', require('./router/postNewChannel'));
+//app.post('/postNewChannel', require('./router/postNewChannel'));
 app.post('/getUsers', require('./router/postAllUsers'));
 app.post('/getGroups', require('./router/getGroups'));
 app.post('/getUserChannels', require('./router/getUserChannels'));

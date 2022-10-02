@@ -1,0 +1,26 @@
+<form (submit)="addNewChannel($event)">
+    <div class="container">
+      <h1>Create Channel</h1>
+      <hr>
+  
+      <label for="name" id="namelabel"><b>Channel Name: </b></label>
+      <input type="text" placeholder="Enter Name" name="channelname" id="channelname" [(ngModel)] = "channelname" [ngModelOptions]="{standalone: true}" required>
+      <br>
+
+      <label for="id" id="idlabel"><b>Channel ID: </b></label>
+      <input type="text" placeholder="Enter ID" name="channelid" id="channelid" [(ngModel)] = "channelid" [ngModelOptions]="{standalone: true}" required>
+      <br>
+
+      <label for="group" id="grouplabel"><b>Group in Channel: </b></label>
+      <input type="text" placeholder="Enter Group Name" name="groupsinchannel" id="groupsinchannel" [(ngModel)] = "groupsinchannel" [ngModelOptions]="{standalone: true}" required>
+      <!--<select id="channelgroup" [(ngModel)] = "groupsinchannel" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let groups of grouplist" value = {{groups}}>{{groups}}</option>
+      </select>!-->
+      <hr>
+
+      <button type="submit" class="registerbtn">Create Channel</button>
+      <div [@noticeState]="noticeName" class="alert alert-warning" role="alert">
+        {{newchannelMessage}}
+      </div>
+    </div>
+</form>
