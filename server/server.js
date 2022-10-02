@@ -33,6 +33,7 @@ MongoClient.connect(url, {/*poolSize:10,*/useNewUrlParser: true, useUnifiedTopol
         require('./router/postNewGroup.js')(db,app);
         require('./router/postNewChannel.js')(db,app);
         require('./router/postAllUsers')(db,app);
+        require('./router/deleteuser')(db,app,ObjectID);
 
     //require('./listen.js')(http);
 })

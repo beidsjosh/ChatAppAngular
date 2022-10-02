@@ -25,4 +25,8 @@ export class DataServiceService {
   getusers(){
     return this.http.get<any>('http://localhost:3000/api/getlist');
   }
+
+  deleteuser(userid: any){
+    return this.http.post<any>('http://localhost:3000/api/deleteuser', {'userid':userid})
+  }
 }

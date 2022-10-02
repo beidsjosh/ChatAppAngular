@@ -17,12 +17,12 @@ export class ListusersComponent implements OnInit {
     });
   }
 
-  /*deleteuser(id){
+  deleteuser(id: any){
     if (confirm("Are you sure you want to delete this user?")){
       this.dataService.deleteuser(id).subscribe((data)=>{
         this.users = data;
       });
     }
-  }*/
+  }
 
 }
