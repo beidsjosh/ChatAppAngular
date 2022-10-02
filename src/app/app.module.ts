@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { NewgroupComponent } from './newgroup/newgroup.component';
 import { NewchannelComponent } from './newchannel/newchannel.component';
 import { AdduserComponent } from './adduser/adduser.component';
+import { AddgroupComponent } from './addgroup/addgroup.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdduserComponent } from './adduser/adduser.component';
     HomeComponent,
     NewgroupComponent,
     NewchannelComponent,
-    AdduserComponent
+    AdduserComponent,
+    AddgroupComponent
   ],
   imports: [
     BrowserModule,

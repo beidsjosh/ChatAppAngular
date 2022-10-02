@@ -30,13 +30,14 @@ MongoClient.connect(url, {/*poolSize:10,*/useNewUrlParser: true, useUnifiedTopol
         const db = client.db(dbName);
 
         require('./router/postNewUser.js')(db,app);
+        require('./router/postNewGroup.js')(db,app);
 
     //require('./listen.js')(http);
 })
 
 app.post('/login', require('./router/postLogin'));
 //app.post('/postNewUser', require('./router/postNewUser'));
-app.post('/postNewGroup', require('./router/postNewGroup'));
+//app.post('/postNewGroup', require('./router/postNewGroup'));
 app.post('/postNewChannel', require('./router/postNewChannel'));
 app.post('/getUsers', require('./router/postAllUsers'));
 app.post('/getGroups', require('./router/getGroups'));

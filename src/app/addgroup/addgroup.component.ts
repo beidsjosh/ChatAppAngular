@@ -1,22 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
-import { Users } from 'server/data/users';
-
+import { Groups } from 'server/data/groups';
 
 @Component({
-  selector: 'app-adduser',
-  templateUrl: './adduser.component.html',
-  styleUrls: ['./adduser.component.css']
+  selector: 'app-addgroup',
+  templateUrl: './addgroup.component.html',
+  styleUrls: ['./addgroup.component.css']
 })
-export class AdduserComponent implements OnInit {
-  username='';
-  useremail='';
-  userid:number = 0;
-  usergroup='';
-  userrole='';
-  userok=false;
-  newuser!: Users;
-  newuserMessage="";
+export class AddgroupComponent implements OnInit {
+  groupname='';
+  groupid:number = 0;
+  newgroup!: Groups;
+  newgroupMessage="";
   iderrormsg:string = "This id already exists & New ID is required.";
   iderrormsg2:string="";
   iderrorshow:boolean = false;
@@ -34,26 +29,22 @@ export class AdduserComponent implements OnInit {
     return this.noticeshow ? 'show':'hide';
   }
   
-  addNewUser(event: any){
+  addNewGroup(event: any){
     event.preventDefault();
-    if(this.userid == null){
+    if(this.groupid == null){
       this.iderrorshow = !this.iderrorshow;
     } else{
-      this.newuser = new Users(this.userid, this.username, this.useremail, this.userrole, this.usergroup, this.userok);
-      this.dataService.adduser(this.newuser).subscribe((data)=>{
+      this.newgroup = new Groups(this.groupid, this.groupname);
+      this.dataService.addgroup(this.newgroup).subscribe((data)=>{
         console.log(data);
         this.noticeshow = true;
         if(data.err == null){
-          this.newuserMessage = data.num + " new user(" + this.username + ") was added";
+          this.newgroupMessage = data.num + " new user(" + this.groupname + ") was added";
         }else{
-          this.newuserMessage = data.err;
+          this.newgroupMessage = data.err;
         }
-        this.userid = 0;
-        this.username = "";
-        this.useremail = "";
-        this.userrole = "";
-        this.usergroup = "";
-        this.userok = false;
+        this.groupid = 0;
+        this.groupname = "";
       });
     }
   }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddgroupComponent } from './addgroup/addgroup.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'newgroup', component: NewgroupComponent},
   { path: 'userlist', component: UserlistComponent},
   { path: 'newchannel', component: NewchannelComponent},
-  { path: 'adduser', component: AdduserComponent}
+  { path: 'adduser', component: AdduserComponent},
+  { path: 'addgroup', component: AddgroupComponent}
 ];
 
 @NgModule({

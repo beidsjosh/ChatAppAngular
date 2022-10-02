@@ -1,0 +1,19 @@
+<form (submit)="addNewGroup($event)">
+    <div class="container">
+      <h1>Create Group</h1>
+      <hr>
+  
+      <label for="name" id="namelabel"><b>Group Name: </b></label>
+      <input type="text" placeholder="Enter Name" name="groupname" id="groupname" [(ngModel)] = "groupname" required>
+      <br>
+
+      <label for="name" id="idlabel"><b>Group ID: </b></label>
+      <input type="text" placeholder="Enter ID" name="groupid" id="groupid" [(ngModel)] = "groupid" required>
+      <hr>
+
+      <button type="submit" class="registerbtn">Create Group</button>
+      <div [@noticeState]="noticeName" class="alert alert-warning" role="alert">
+        {{newgroupMessage}}
+      </div>
+    </div>
+</form>

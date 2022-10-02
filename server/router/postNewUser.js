@@ -28,7 +28,7 @@ module.exports = function(req, res) {
 }*/
 
 module.exports = function(db,app){
-    app.post('/api/add', function(req,res){
+    app.post('/api/adduser', function(req,res){
         let userobj = {
             "userid": req.body.userid,
             "username": req.body.username,
