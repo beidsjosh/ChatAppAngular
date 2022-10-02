@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdduserComponent } from './adduser/adduser.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'createuser', component: CreateuserComponent},
   { path: 'newgroup', component: NewgroupComponent},
   { path: 'userlist', component: UserlistComponent},
-  { path: 'newchannel', component: NewchannelComponent}
+  { path: 'newchannel', component: NewchannelComponent},
+  { path: 'adduser', component: AdduserComponent}
 ];
 
 @NgModule({

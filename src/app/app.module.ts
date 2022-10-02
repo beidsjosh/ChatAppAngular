@@ -14,6 +14,7 @@ import { CreateuserComponent } from './createuser/createuser.component';
 import { HomeComponent } from './home/home.component';
 import { NewgroupComponent } from './newgroup/newgroup.component';
 import { NewchannelComponent } from './newchannel/newchannel.component';
+import { AdduserComponent } from './adduser/adduser.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewchannelComponent } from './newchannel/newchannel.component';
     CreateuserComponent,
     HomeComponent,
     NewgroupComponent,
-    NewchannelComponent
+    NewchannelComponent,
+    AdduserComponent
   ],
   imports: [
     BrowserModule,
