@@ -21,4 +21,8 @@ export class DataServiceService {
   addchannel(channels:Channels){
     return this.http.post<any>('http://localhost:3000/api/addchannel', channels);
   }
+
+  getusers(){
+    return this.http.get<any>('http://localhost:3000/api/getlist');
+  }
 }

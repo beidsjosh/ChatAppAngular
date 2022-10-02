@@ -1,0 +1,18 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>UserID</th>
+            <th>Username</th>
+            <th>User Group</th>
+            <th>User Role</th>
+        </tr>
+        <tr style="padding-top:20px" *ngFor="let user of users">
+            <td>{{user.userid}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.usergroup}}</td>
+            <td>{{user.userrole}}</td>
+            <td><span class="btn btn-primary"><i class="fa fa-edit"></i>Edit</span></td>
+            &nbsp; <span class="btn btn-primary"><i class="fa fa-trash"></i>Delete</span>
+        </tr>
+    </table>
+</div>
