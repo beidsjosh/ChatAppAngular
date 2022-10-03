@@ -44,7 +44,7 @@ export class AdduserComponent implements OnInit {
         console.log(data);
         this.noticeshow = true;
         if(data.err == null){
-          this.newuserMessage = data.num + " new user(" + this.username + ") was added";
+          this.newuserMessage ="New user(" + this.username + ") was added successfully";
         }else{
           this.newuserMessage = data.err;
         }

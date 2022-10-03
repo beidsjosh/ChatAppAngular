@@ -23,7 +23,15 @@ export class DataServiceService {
   }
 
   getusers(){
-    return this.http.get<any>('http://localhost:3000/api/getlist');
+    return this.http.get<any>('http://localhost:3000/api/getusers');
+  }
+
+  getgroups(){
+    return this.http.get<any>('http://localhost:3000/api/getgroups');
+  }
+
+  getchannels(){
+    return this.http.get<any>('http://localhost:3000/api/getchannels');
   }
 
   deleteuser(userid: any){

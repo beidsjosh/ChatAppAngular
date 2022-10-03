@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
+import { Channels } from 'server/data/channels';
 import {Router} from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 const httpOptions = {
@@ -23,11 +25,12 @@ export class HomeComponent implements OnInit {
   UserLoggedin = sessionStorage.getItem('userlogin')
   isUserLoggedin = false;
 
-  UserGroupList: string[] = [];
+  ChannelList: Channels[] = [];
+  UserChannelList: string[] = [];
 
   
 
-  constructor(private httpClient: HttpClient) { 
+  constructor(private httpClient: HttpClient, private dataService: DataServiceService) { 
   }
 
   ngOnInit(): void {
@@ -46,7 +49,20 @@ export class HomeComponent implements OnInit {
       this.isUserLoggedin = false;
     }
 
-    this.httpClient.post(BACKEND_URL + '/getUserChannels',  httpOptions)
+    this.dataService.getchannels().subscribe((data)=>{
+      this.ChannelList = data;
+      //console.log(this.ChannelList);
+      for (let i = 0; i< this.ChannelList.length; i++) {
+        if (this.ChannelList[i].groupsinchannel == this.loggedinUsergroup){
+          this.UserChannelList.push(this.ChannelList[i].channelname);
+          console.log(this.UserChannelList)
+        }
+      }
+    });
+
+    
+
+    /*this.httpClient.post(BACKEND_URL + '/getUserChannels',  httpOptions)
     .subscribe((data:any)=>{
       console.log(data);
       for (let i = 0; i < data.length; i++) {
@@ -56,7 +72,8 @@ export class HomeComponent implements OnInit {
       }
       
       console.log(this.UserGroupList);
-  })
+  })*/
+  
   }
 
 }

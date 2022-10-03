@@ -1,4 +1,4 @@
-var fs = require('fs');
+/*var fs = require('fs');
 
 module.exports = function(req, res) {
     //var u = req.body.username;
@@ -10,4 +10,13 @@ module.exports = function(req, res) {
 
         res.send(ChannelArray);
     })
+}*/
+
+module.exports = function(db,app){
+    app.get('/api/getchannels', function(req,res){
+        const collection = db.collection('channels');
+        collection.find({}).toArray((err, data) =>{
+            res.send(data);
+        });
+    });
 }

@@ -35,6 +35,8 @@ MongoClient.connect(url, {/*poolSize:10,*/useNewUrlParser: true, useUnifiedTopol
         require('./router/postAllUsers')(db,app);
         require('./router/deleteuser')(db,app,ObjectID);
         require('./router/postLogin')(db,app);
+        require('./router/getUserChannels')(db,app);
+        require('./router/getGroups')(db,app);
 
     //require('./listen.js')(http);
 })
@@ -44,5 +46,5 @@ MongoClient.connect(url, {/*poolSize:10,*/useNewUrlParser: true, useUnifiedTopol
 //app.post('/postNewGroup', require('./router/postNewGroup'));
 //app.post('/postNewChannel', require('./router/postNewChannel'));
 //app.post('/getUsers', require('./router/postAllUsers'));
-app.post('/getGroups', require('./router/getGroups'));
-app.post('/getUserChannels', require('./router/getUserChannels'));
+//app.post('/getGroups', require('./router/getGroups'));
+//app.post('/getUserChannels', require('./router/getUserChannels'));

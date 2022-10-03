@@ -40,7 +40,7 @@ export class AddchannelComponent implements OnInit {
         console.log(data);
         this.noticeshow = true;
         if(data.err == null){
-          this.newchannelMessage = data.num + " new user(" + this.channelname + ") was added";
+          this.newchannelMessage = "New Channel(" + this.channelname + ") was added successfully";
         }else{
           this.newchannelMessage = data.err;
         }

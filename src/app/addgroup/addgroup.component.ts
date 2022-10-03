@@ -39,7 +39,7 @@ export class AddgroupComponent implements OnInit {
         console.log(data);
         this.noticeshow = true;
         if(data.err == null){
-          this.newgroupMessage = data.num + " new user(" + this.groupname + ") was added";
+          this.newgroupMessage = "New Group(" + this.groupname + ") was added successfully";
         }else{
           this.newgroupMessage = data.err;
         }
