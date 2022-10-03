@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Channels } from 'server/data/channels';
+import { Groups } from 'server/data/groups';
 
 @Component({
   selector: 'app-addchannel',
@@ -18,9 +19,20 @@ export class AddchannelComponent implements OnInit {
   iderrorshow:boolean = false;
   noticeshow:boolean = false;
 
+  GroupList: Groups[] = [];
+  GroupNameList: string[] = [];
+
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit(): void {
+    this.dataService.getgroups().subscribe((data)=>{
+      this.GroupList = data;
+      //console.log(this.ChannelList);
+      for (let i = 0; i< this.GroupList.length; i++) {
+        this.GroupNameList.push(this.GroupList[i].groupname);
+        console.log(this.GroupNameList)
+      }
+    });
   }
 
   get stateName(){

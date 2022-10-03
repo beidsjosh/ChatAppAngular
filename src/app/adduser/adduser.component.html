@@ -16,16 +16,16 @@
       <input type="text" placeholder="Enter ID" name="id" id="id" [(ngModel)]="userid" required>
       <br>
 
-      <label for="group" id="grouplabel"><b>User Group: </b></label>
+      <!--<label for="group" id="grouplabel"><b>User Group: </b></label>
       <input type="text" placeholder="Enter Group" name="usergroup" id="usergroup" [(ngModel)]="usergroup" required>
       <br>
 
       <label for="role" id="rolelabel"><b>User Role: </b></label>
-      <input type="text" placeholder="Enter Role" name="userrole" id="userrole" [(ngModel)]="userrole" required>
+      <input type="text" placeholder="Enter Role" name="userrole" id="userrole" [(ngModel)]="userrole" required>!-->
 
-      <!--<label for="group" id="grouplabel"><b>User Group: </b></label>
+      <label for="group" id="grouplabel"><b>User Group: </b></label>
       <select id="usergroup" [(ngModel)] = "usergroup" [ngModelOptions]="{standalone: true}">
-        <option *ngFor="let groups of grouplist" value = {{groups}}>{{groups}}</option>
+        <option *ngFor="let groups of GroupNameList" value = {{groups}}>{{groups}}</option>
       </select>
       <br>
 
@@ -34,7 +34,7 @@
         <option value="super" *ngIf="supertrue">Super</option>
         <option value="group-admin">Group Admin</option>
         <option value="default">Default User</option>
-      </select>!-->
+      </select>
   
       <!--<input type="hidden" name="group" id="group" value="default-group" [(ngModel)]="usergroup" required>
       <input type="hidden" name="role" id="role" value="basic-user" [(ngModel)]="userrole" required>!-->
