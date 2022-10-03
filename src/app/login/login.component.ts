@@ -15,6 +15,7 @@ import { DataServiceService } from '../data-service.service';
 })
 export class LoginComponent implements OnInit {
   username='';
+  password='';
   useremail='';
   userid:number = 0;
   usergroup='';
@@ -76,8 +77,9 @@ export class LoginComponent implements OnInit {
       this.iderrorshow = !this.iderrorshow;
     } else{
       //this.newuser = new Users(this.userid, this.username, this.useremail, this.userrole, this.usergroup, this.userok);
-      this.dataService.login(this.username).subscribe((data)=>{
+      this.dataService.login(this.username, this.password).subscribe((data)=>{
           console.log(data);
+          if(data.error==null){
           this.userok = true;
           this.userlist = data;
           console.log(this.userlist);
@@ -90,6 +92,9 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('usergroup', this.userlist[0].usergroup.toString());
   
           this.router.navigateByUrl("/home");
+          }else{
+            alert(data.error);
+          }
       });
     }
   }

@@ -38,7 +38,7 @@ export class DataServiceService {
     return this.http.post<any>('http://localhost:3000/api/deleteuser', {'userid':userid})
   }
 
-  login(username: string){
-    return this.http.post<any>('http://localhost:3000/api/login', {'username':username});
+  login(username: any, password: any){
+    return this.http.post<any>('http://localhost:3000/api/login', {'username':username, 'password':password});
   }
 }

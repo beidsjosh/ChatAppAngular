@@ -32,6 +32,7 @@ module.exports = function(db,app){
         let userobj = {
             "userid": req.body.userid,
             "username": req.body.username,
+            "password": req.body.password,
             "useremail": req.body.useremail,
             "userrole": req.body.userrole,
             "usergroup": req.body.usergroup,

@@ -11,6 +11,7 @@ import { Groups } from 'server/data/groups';
 })
 export class AdduserComponent implements OnInit {
   username='';
+  password=''
   useremail='';
   userid:number = 0;
   usergroup='';
@@ -67,7 +68,7 @@ export class AdduserComponent implements OnInit {
     if(this.userid == null){
       this.iderrorshow = !this.iderrorshow;
     } else{
-      this.newuser = new Users(this.userid, this.username, this.useremail, this.userrole, this.usergroup, this.userok);
+      this.newuser = new Users(this.userid, this.username, this.password, this.useremail, this.userrole, this.usergroup, this.userok);
       this.dataService.adduser(this.newuser).subscribe((data)=>{
         console.log(data);
         this.noticeshow = true;
