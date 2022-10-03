@@ -1,4 +1,4 @@
-var fs = require('fs');
+/*var fs = require('fs');
 
 module.exports = function(req, res) {
     var u = req.body.username;
@@ -15,4 +15,17 @@ module.exports = function(req, res) {
         console.log(userData);
         res.send(userData);
     })
+}*/
+
+module.exports = function(db,app) {
+    app.post('/api/login', function(req,res){
+    var u = req.body.username;
+    console.log(u);
+    const collection = db.collection('users');
+    collection.find({'username':u}).toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+    });
 }

@@ -34,11 +34,12 @@ MongoClient.connect(url, {/*poolSize:10,*/useNewUrlParser: true, useUnifiedTopol
         require('./router/postNewChannel.js')(db,app);
         require('./router/postAllUsers')(db,app);
         require('./router/deleteuser')(db,app,ObjectID);
+        require('./router/postLogin')(db,app);
 
     //require('./listen.js')(http);
 })
 
-app.post('/login', require('./router/postLogin'));
+//app.post('/login', require('./router/postLogin'));
 //app.post('/postNewUser', require('./router/postNewUser'));
 //app.post('/postNewGroup', require('./router/postNewGroup'));
 //app.post('/postNewChannel', require('./router/postNewChannel'));

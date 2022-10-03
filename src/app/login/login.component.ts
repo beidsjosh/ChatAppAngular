@@ -5,6 +5,8 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 };
 const BACKEND_URL = 'http://localhost:3000';
+import { Users } from 'server/data/users';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,26 @@ const BACKEND_URL = 'http://localhost:3000';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username = "";
+  username='';
+  useremail='';
+  userid:number = 0;
+  usergroup='';
+  userrole='';
+  userok=false;
+  newuser!: Users;
+  newuserMessage="";
+  iderrormsg:string = "This id already exists & New ID is required.";
+  iderrormsg2:string="";
+  iderrorshow:boolean = false;
+  noticeshow:boolean = false;
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  userlist: Users[] = [];
+
+  constructor(private dataService: DataServiceService, private router:Router) { }
 
   ngOnInit(): void {
   }
-  submit(){
+  /*submit(){
     
     let user = {username:this.username};
     console.log(user);
@@ -46,5 +61,36 @@ export class LoginComponent implements OnInit {
 
 
     
+  }*/
+
+  get stateName(){
+    return this.iderrorshow ? 'show':'hide';
+  }
+  get noticeName(){
+    return this.noticeshow ? 'show':'hide';
+  }
+  
+  login(event: any){
+    event.preventDefault();
+    if(this.userid == null){
+      this.iderrorshow = !this.iderrorshow;
+    } else{
+      //this.newuser = new Users(this.userid, this.username, this.useremail, this.userrole, this.usergroup, this.userok);
+      this.dataService.login(this.username).subscribe((data)=>{
+          console.log(data);
+          this.userok = true;
+          this.userlist = data;
+          console.log(this.userlist);
+
+          sessionStorage.setItem('userid', this.userlist[0].userid.toString());
+          sessionStorage.setItem('userlogin', this.userok.toString());
+          sessionStorage.setItem('username', this.userlist[0].username);
+          sessionStorage.setItem('useremail', this.userlist[0].useremail);
+          sessionStorage.setItem('userrole', this.userlist[0].userrole.toString());
+          sessionStorage.setItem('usergroup', this.userlist[0].usergroup.toString());
+  
+          this.router.navigateByUrl("/home");
+      });
+    }
   }
 }

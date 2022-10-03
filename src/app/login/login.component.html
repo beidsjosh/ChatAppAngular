@@ -1,9 +1,9 @@
-<form action="action_page.php" method="post">
+<form (submit)="login($event)" method="post">
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" [(ngModel)]="username" required>
 
-    <button type="submit" (click)="submit()">Login</button>
+    <button type="submit">Login</button>
   </div>
 </form>
