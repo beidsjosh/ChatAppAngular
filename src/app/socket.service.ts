@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import io from 'socket.io-client';
+import { Observable } from 'rxjs';
 
 
 const SERVER_URL = 'http://localhost:3000/home'
@@ -13,11 +14,12 @@ export class SocketService {
 
   constructor() { }
 
-  initSocket(): void {
+  initSocket(){
     this.socket = io(SERVER_URL);
+    return ()=>{this.socket.disconnect();}
   }
 
-  joinroom(selroom: any): void {
+  joinroom(selroom: any){
     this.socket.emit("joinRoom", selroom);
   }
 
@@ -57,7 +59,14 @@ export class SocketService {
     this.socket.emit('message', message);
   }
 
-  getMessage(next: any){
+  /*getMessage(next: any){
     this.socket.on('message', (message: string)=>next(message));
+  }*/
+
+  getMessage(){
+    return new Observable(observer=>{
+      this.socket.on('message', (data: any) => {observer.next(data)
+      });
+    });
   }
 }

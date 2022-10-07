@@ -18,6 +18,8 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { AddgroupComponent } from './addgroup/addgroup.component';
 import { AddchannelComponent } from './addchannel/addchannel.component';
 import { ListusersComponent } from './listusers/listusers.component';
+import { SocketService } from './socket.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,9 +42,10 @@ import { ListusersComponent } from './listusers/listusers.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

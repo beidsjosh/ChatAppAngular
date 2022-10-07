@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
+import { SocketService } from '../socket.service';
 import { Channels } from 'server/data/channels';
 import {Router} from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -28,12 +29,25 @@ export class HomeComponent implements OnInit {
   ChannelList: Channels[] = [];
   UserChannelList: string[] = [];
 
+  //socket.io stuff
+  private socket: any;
+  messagecontent: string = "";
+  messages: string[] = [];
+  rooms=[];
+  roomslist: string = "";
+  roomnotice: string = "";
+  currentroom: string = "";
+  isInRoom = false;
+  numusers: number = 0;
+  ioConnection:any;
+
   
 
-  constructor(private httpClient: HttpClient, private dataService: DataServiceService) { 
+  constructor(private httpClient: HttpClient, private dataService: DataServiceService, private socketService: SocketService) { 
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    //check what role user is
     if ((sessionStorage.getItem('userrole')=="super")){
       this.supertrue = true;
       console.log(this.supertrue);
@@ -43,12 +57,14 @@ export class HomeComponent implements OnInit {
       this.defaulttrue = true;
     }
 
+    //check if user is logged in
     if(sessionStorage.getItem('userlogin') == "true"){
       this.isUserLoggedin = true;
     } else if(sessionStorage.getItem('userlogin') == "false"){
       this.isUserLoggedin = false;
     }
 
+    //gets channels for channel list
     this.dataService.getchannels().subscribe((data)=>{
       this.ChannelList = data;
       //console.log(this.ChannelList);
@@ -59,6 +75,21 @@ export class HomeComponent implements OnInit {
         }
       }
     });
+    
+    //socket.io stuff
+    //this.socketService.initSocket();
+    this.initIoConnection();
+    //this.socketService.getMessage((m: any)=>{this.messages.push(m)});
+    this.socketService.reqroomList();
+    this.socketService.getroomList((msg: any)=>{this.rooms = JSON.parse(msg)});
+    this.socketService.notice((msg:any)=>{this.roomnotice=msg});
+    this.socketService.joined((msg:any)=>{this.currentroom=msg
+    if (this.currentroom != ""){
+      this.isInRoom = true;
+    } else{
+      this.isInRoom = false;
+    }
+  });
 
     
 
@@ -74,6 +105,48 @@ export class HomeComponent implements OnInit {
       console.log(this.UserGroupList);
   })*/
   
+  }
+
+  private initIoConnection(){
+    this.socketService.initSocket();
+    this.ioConnection = this.socketService.getMessage()
+    .subscribe((message) => {
+      this.messages.push(message as string);
+    })
+      
+  }
+
+  joinroom(){
+    this.socketService.joinroom(this.roomslist);
+    this.socketService.reqnumusers(this.roomslist);
+    this.socketService.getnumusers((res: number)=>{this.numusers = res});
+    console.log("room joined");
+  }
+
+  clearnotice(){
+    this.roomnotice = ""
+  }
+
+  leaveroom(){
+    this.socketService.leaveroom(this.currentroom);
+    this.socketService.reqnumusers(this.currentroom);
+    this.socketService.getnumusers((res: number)=>{this.numusers = res});
+    this.roomslist = "";
+    this.currentroom = "";
+    this.isInRoom = false;
+    this.numusers = 0;
+    this.roomnotice = "";
+    this.messages = [];
+  }
+
+  chat(){
+    if(this.messagecontent){
+      this.socketService.sendMessage(this.messagecontent);
+      this.messagecontent = "";
+      console.log("Message sent");
+    } else {
+      console.log("No Message");
+    }
   }
 
 }
