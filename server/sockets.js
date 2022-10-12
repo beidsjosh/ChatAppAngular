@@ -1,19 +1,7 @@
-/*const dataService = require('../src/app/data-service.service');
-var GroupList = [];
-var GroupNameList = [];
-
-dataService.getgroups().subscribe((data)=>{
-    GroupList = data;
-    //console.log(this.ChannelList);
-    for (let i = 0; i< GroupList.length; i++) {
-      GroupNameList.push(GroupList[i].groupname);
-      console.log(GroupNameList)
-    }
-});*/
-
 module.exports = {
     connect: function(io, PORT){
-        var rooms = ["defaultChannel", "defaultChannel2"];
+        //default rooms/channels
+        var rooms = ["defaultChannel", "defaultChannel2", "superChannel1", "super-channel", "groupadmin-channel1", "groupadmin-channel2"];
         var socketRoom = [];
         var socketRoomnum = [];
 
@@ -21,18 +9,16 @@ module.exports = {
 
         chat.on('connection', (socket) => {
             console.log('connected on port' + PORT + ':' + socket.id);
-            console.log(socketRoom);
-            console.log(socketRoomnum);
+            //emits message
             socket.on('message', (message)=>{
-                console.log("message1")
                 for (i=0; i<socketRoom.length; i++){
                     if (socketRoom[i][0] == socket.id){
                         chat.to(socketRoom[i][1]).emit('message', message);
-                        console.log("message2");
                     }
                 }
             });
 
+            //pushes newroom to rooms array
             socket.on('newroom', (newroom)=>{
                 if (rooms.indexOf(newroom) == -1){
                     rooms.push(newroom);
@@ -40,10 +26,12 @@ module.exports = {
                 }
             });
 
+            //emits roomlist
             socket.on('roomlist', (m)=>{
                 chat.emit('roomlist', JSON.stringify(rooms));
             });
 
+            //displays number of users
             socket.on('numusers', (room)=>{
                 var usercount = 0;
 
@@ -56,6 +44,7 @@ module.exports = {
                 chat.in(room).emit('numusers', usercount);
             });
 
+            //join room
             socket.on('joinRoom', async (room)=>{
                 if(rooms.includes(room)){
                     console.log(rooms);
@@ -91,6 +80,7 @@ module.exports = {
                 }
             });
 
+            //leave room
             socket.on("leaveRoom", (room)=>{
                 for (let i=0; i<socketRoom.length; i++){
                     if (socketRoom[i][0] == socket.id){
@@ -110,6 +100,7 @@ module.exports = {
                 }
             });
 
+            //disconnect
             socket.on('disconnect', ()=>{
                 chat.emit("disconnected");
                 for (let i=0; i<socketRoom.length; i++){
