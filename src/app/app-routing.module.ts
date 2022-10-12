@@ -3,24 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddchannelComponent } from './addchannel/addchannel.component';
 import { AddgroupComponent } from './addgroup/addgroup.component';
 import { AdduserComponent } from './adduser/adduser.component';
-//import { CreateuserComponent } from './createuser/createuser.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ListusersComponent } from './listusers/listusers.component';
 import { LoginComponent } from './login/login.component';
-//import { NewchannelComponent } from './newchannel/newchannel.component';
-//import { NewgroupComponent } from './newgroup/newgroup.component';
-import { UserlistComponent } from './userlist/userlist.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
-  //{ path: 'createuser', component: CreateuserComponent},
-  //{ path: 'newgroup', component: NewgroupComponent},
-  //{ path: 'userlist', component: UserlistComponent},
-  //{ path: 'newchannel', component: NewchannelComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addgroup', component: AddgroupComponent},
   { path: 'addchannel', component: AddchannelComponent},

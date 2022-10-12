@@ -1,5 +1,9 @@
-#username, #email, #id, #usergroup, #userrole{
+#username, #password, #email, #id, #usergroup, #userrole{
     padding: 5px;
+}
+
+#passlabel{
+    padding-right: 27px;
 }
 
 #emaillabel{

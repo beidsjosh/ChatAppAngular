@@ -7,13 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserdetailsComponent } from './userdetails/userdetails.component';
-import { UserlistComponent } from './userlist/userlist.component';
-import { ChannellistComponent } from './channellist/channellist.component';
-import { CreateuserComponent } from './createuser/createuser.component';
 import { HomeComponent } from './home/home.component';
-import { NewgroupComponent } from './newgroup/newgroup.component';
-import { NewchannelComponent } from './newchannel/newchannel.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddgroupComponent } from './addgroup/addgroup.component';
 import { AddchannelComponent } from './addchannel/addchannel.component';
@@ -26,13 +20,7 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    UserdetailsComponent,
-    UserlistComponent,
-    ChannellistComponent,
-    CreateuserComponent,
     HomeComponent,
-    NewgroupComponent,
-    NewchannelComponent,
     AdduserComponent,
     AddgroupComponent,
     AddchannelComponent,
