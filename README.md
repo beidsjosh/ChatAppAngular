@@ -1,13 +1,13 @@
 # ChatAppAngular
 The following repo is for the Assignment in 3813ICT. It includes an Angular app that has the complete features for a functional chat app (Phase 2 completed).
 
-Usernames: Use these usernames to log in and test the different permissions
+Usernames + Passwords: Use these usernames to log in and test the different permissions
 
-superuser: includes super privileges and the ability to create other super users
+superuser + 123: includes super privileges and the ability to create other super users
 
-groupadminuser: has groupadmin-role and lacks the ability to create other super users
+groupadminuser + 123: has groupadmin-role and lacks the ability to create other super users
 
-defaultuser: has no permissions, can only access the home page
+defaultuser + defaultpassword: has no permissions, can only access the home page
 
 ## Git Repository
 
